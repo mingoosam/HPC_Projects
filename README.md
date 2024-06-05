@@ -1,3 +1,5 @@
+## HPC Projects
+
 Projects created for Dr. Scott's Spring 2024 Parallel Hardware and Distributed Systems (ECE 8275) course at the University of Missouri - Columbia as part of coursework for the MS in Electrical Engineering and Computer Science
 
 PA1 and PA2 emphasize the use of cuda programming to implement a median filter algorithm on an image.
