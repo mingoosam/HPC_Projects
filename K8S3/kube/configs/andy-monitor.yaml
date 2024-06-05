@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: andy-mon
+spec:
+  containers:
+    - name: andy-mon
+      image: docker.io/jalexhurt/imagemagick
+      stdin: True
+      tty: True
+      resources:
+        limits:
+          memory: 8G
+          cpu: 6
+        requests:
+          memory: 6G
+          cpu: 6
+      volumeMounts:
+        - name: andy-hpc
+          mountPath: /workspace
+  volumes:
+    - name: andy-hpc
+      persistentVolumeClaim:
+        claimName: andy-hpc
+
+  restartPolicy: Never

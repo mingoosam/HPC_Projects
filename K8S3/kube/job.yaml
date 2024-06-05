@@ -1,0 +1,35 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: lena-convert-ptb
+spec:
+  template:
+    metadata:
+      name: lena
+    spec:
+      containers:
+      - name: imagemagick-andy
+        #image: jalexhurt/imagemagick
+        image: kovaleskilab/imagemagick:v2-andy
+        imagePullPolicy: IfNotPresent 
+        command: ["/bin/sh", "-c"]
+        args:
+          ["ls >> logs/log.log;
+          convert data/lena.pgm -resize 256x256 data/lena.png"]
+        resources:
+          limits:
+            memory: 4Gi
+            cpu: 2
+          requests:
+            memory: 4Gi
+            cpu: 2
+        volumeMounts:
+        - name: andy-hpc
+          mountPath: /workspace
+      restartPolicy: Never
+      volumes:
+      - name: andy-hpc 
+        persistentVolumeClaim:
+          claimName: andy-hpc
+  backoffLimit: 1
+

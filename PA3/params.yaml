@@ -1,0 +1,29 @@
+device : cpu
+animate : 1
+
+## fdtd_1d.py params ##
+
+ke : 
+ex : 
+hy : 
+grid_spacing : 1
+
+# pulse params
+
+kc :
+t0 : 40
+spread : 12
+nsteps : 
+
+dt :
+courant_number :
+propagation_time :
+
+#path_root : /Users/andyvarner/Documents/grad_school_courses/HPC_Spring2024/
+#path_save : /Users/andyvarner/Documents/grad_school_courses/HPC_Spring2024/fdtd_sims
+#path_stats : /Users/andyvarner/Documents/grad_school_courses/HPC_Spring2024/PA3/timing_stats
+
+path_root : /home/agkgd4/Documents/hpc_class/sp24cs8275_agkgd4/PA3
+path_save : /home/agkgd4/Documents/hpc_class/results
+path_stats : /home/agkgd4/Documents/hpc_class/results/timing_stats
+
